@@ -1,0 +1,652 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #eceaea;
+  font-family: sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 7%;
+  background-color: #f9f9f9;
+
+  z-index: 100;
+}
+
+header .left-el {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .left-el .logo img {
+  width: 35px;
+  border-radius: 7px;
+}
+
+/*_____________nav links___________*/
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav li {
+  list-style: none;
+  padding: 0 15px;
+}
+
+header nav li a {
+  text-decoration: none;
+  color: #a8a4a4;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+header nav li a i {
+  font-size: 16px;
+  color: #3b3a3a;
+}
+
+header nav li a span {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+header nav li a span i {
+  margin-top: -8px;
+}
+
+/************hover for <a>*************/
+header nav li a:hover span {
+  color: #3b3a3a;
+  transition: color 0.75s ease-in-out;
+}
+
+/***************search container******************/
+header .search-container {
+  background-color: #c4e6f6;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+}
+
+header .search-container i {
+  font-size: 16px;
+}
+
+header .search-container input {
+  padding: 5px 0;
+  color: #3b3a3a;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  font-size: 17px;
+}
+
+header .search-container input:focus {
+  width: 300px;
+  transition: width 1.75s ease-in-out;
+}
+
+/* 
+media query for header
+*/
+@media (max-width: 760px) {
+  header nav li a span,
+  header .search-container input {
+    display: none;
+  }
+
+  header .search-container i,
+  header nav li a i {
+    font-size: 14px;
+  }
+
+  header nav li {
+    padding: 0 10px;
+  }
+
+  header .left-el .logo img {
+    width: 30px;
+  }
+}
+
+/******main***********/
+
+main {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  padding: 20px 7%;
+}
+
+main aside.left,
+main aside.right {
+  border: 0px solid #3b3a3a;
+  width: 20%;
+  position: sticky;
+  bottom: 0;
+  padding: 5px 7px;
+  /* background-color: #f9f9f9; */
+  border-radius: 4px;
+}
+main aside.right {
+  width: 25%;
+}
+
+main .center {
+  width: 55%;
+  padding: 5px 7px;
+}
+
+/*card*/
+
+aside.left .card,
+aside.right .card,
+.center .card,
+article {
+  border: 0px solid #000;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+}
+
+aside.left .user-card .profile-details,
+aside.left .user-card .connection {
+  border-bottom: 2px solid #9e9c9c;
+}
+
+.profile-details .background-img img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 7px 7px 0 0;
+}
+
+.profile-details .profile-pic img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-top: -40px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 30px;
+}
+
+.profile-details .username {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 16px;
+  color: #3b3a3a;
+  cursor: pointer;
+}
+
+.profile-details .username:hover {
+  text-decoration: underline;
+}
+
+.profile-details .user-skills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25px;
+  padding-bottom: 30px;
+  font-size: 13px;
+  gap: 5px;
+}
+
+.profile-details .user-skills span {
+  border-left: 1.5px solid #9e9c9c;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.profile-details .user-skills span:first-child {
+  border: 0;
+  background-color: gainsboro;
+  padding: 3px;
+}
+
+/* connection */
+
+aside.left .user-card .connection {
+  padding: 6px 8px;
+  color: #3b3a3a;
+  font-size: 13px;
+}
+
+aside.left .user-card .connection:hover {
+  background-color: #9e9c9c;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+aside.left .user-card .connection div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+aside.left .user-card .connection div span {
+  color: aquamarine;
+  font-weight: 700;
+}
+
+/* my item */
+
+aside.left .user-card .my-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 8px;
+  font-size: 13px;
+  border-radius: 0 0 10px 10px;
+}
+
+aside.left .user-card .my-item:hover {
+  background-color: #9e9c9c;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+/* event */
+aside.left .user-event {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 8px;
+  color: rgb(53, 89, 231);
+}
+
+aside.left .user-event p {
+  margin-bottom: 10px;
+}
+
+aside.left .user-event a {
+  color: rgb(53, 89, 231);
+  text-decoration: none;
+}
+
+aside.left .user-event a:hover {
+  text-decoration: underline;
+}
+
+aside.left .user-event .event {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+aside.left .user-event .event span:last-child {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 15px;
+}
+
+aside.left .user-event .event span:last-child:hover,
+aside.left .user-event .discover-m:hover {
+  background-color: #a8a4a4;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+aside.left .user-event .discover-m {
+  border-top: 2px solid #3b3a3a;
+  margin-left: -8px;
+  margin-right: -8px;
+  margin-bottom: -10px;
+  padding: 10px 8px;
+  text-align: center;
+  color: #a8a4a4;
+  border-radius: 0 0 10px 10px;
+}
+
+aside.left .user-event .discover-m:hover {
+  color: #3b3a3a;
+}
+
+/* right side */
+
+.right .feeds {
+  padding: 10px 0;
+}
+
+aside.right .feeds h5 {
+  padding: 10px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+aside.right .feeds .feed-user div {
+  padding: 10px 8px;
+  display: flex;
+  gap: 8px;
+}
+
+aside.right .feeds .feed-user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+aside.right .feeds .feed-user .feed-user-det {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  gap: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #3b3a3a;
+}
+
+aside.right .feeds .feed-user .feed-user-det h5 {
+  margin-bottom: 0;
+}
+
+aside.right .feeds button {
+  background-color: transparent;
+  padding: 5px 15px;
+  border-radius: 30px;
+  border: 2px solid #9e9c9c;
+  margin-left: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  word-spacing: 5px;
+}
+
+.recommendations {
+  margin-top: 20px;
+}
+
+.right .recommendations a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+  padding: 2px 10px 2px 10px;
+}
+
+.recommendations a:hover {
+  background-color: #a8a4a4;
+}
+
+/* feed2 */
+
+.right .feeds-2 {
+  padding: 10px 10px;
+}
+
+.right .feeds-2 h5 {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.feeds-2-img {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.feeds-2 img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.feeds-2 h4 {
+  padding: 3px;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.feeds-2 button {
+  padding: 8px 20px;
+  border: rgb(53, 89, 231) ridge 2px;
+  color: rgb(53, 89, 231);
+  border-radius: 20px;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+/* user post */
+
+.user-post {
+  padding: 12px 10px;
+
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  column-gap: 20px;
+  row-gap: 30px;
+}
+
+.user-post img,
+.post-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.user-post input {
+  padding: 10px;
+  background-color: transparent;
+  color: #3b3a3a;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  border: solid #a8a4a4 1.5px;
+  border-radius: 30px;
+}
+
+.user-post .post-media {
+  grid-column: 1 / 3;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+
+  font-size: 14px;
+}
+
+.user-post .post-media a {
+  display: flex;
+  gap: 5px;
+}
+
+/* sort-posts */
+
+.center .sort-posts {
+  display: grid;
+  grid-template-columns: 1fr 100px 20px;
+  align-items: center;
+  gap: 3px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* post wrapper */
+
+article {
+  padding: 12px 10px;
+}
+
+article .rel-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+
+  border-bottom: 1.5px solid #9e9c9c;
+  padding-bottom: 10px;
+}
+
+article .rel-user span {
+  font-size: 13px;
+}
+
+.rel-user img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+/* close icon X */
+
+article .cl {
+  position: absolute;
+  right: 0;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px 4px;
+  transition: 0.5s ease;
+}
+
+article .cl:hover {
+  background-color: #a8a4a4;
+}
+
+/* post */
+
+.post {
+  margin-top: 20px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-stat small {
+  font-size: 12px;
+}
+
+/* post content */
+
+.post .post-content {
+  font-size: 15px;
+  margin: 15px 0;
+}
+.post .post-content span {
+  color: rgb(53, 89, 231);
+  font-weight: 500;
+}
+
+.post .post-med img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* footer */
+
+.footer {
+  padding: 5px 10%;
+}
+
+.footer div {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer div a {
+  color: #3b3a3a;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer div a span {
+  color: rgb(53, 89, 231);
+}
+
+.footer p {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.footer p img {
+  width: 50px;
+  object-fit: contain;
+}
+
+/* 
+media query
+
+is used to set break for our website
+
+*/
+
+/* main section */
+
+@media (max-width: 760px) {
+  aside.left,
+  aside.right {
+    display: none;
+  }
+
+  main .center {
+    width: 100%;
+    padding: 5px 0;
+  }
+
+  .center .user-post {
+    column-gap: 2px;
+  }
+
+  .user-post input {
+    font-size: 12px;
+    padding: 3px 10px;
+    font-weight: 500;
+  }
+
+  .user-post .post-media {
+    padding: 0 5px;
+  }
+
+  .user-post img,
+  .post-header img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .post .post-med img {
+    object-fit: fill;
+    height: 300px;
+  }
+}
